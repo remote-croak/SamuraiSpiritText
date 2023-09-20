@@ -29,4 +29,5 @@ public:
 	
 	int getLevel();
 	string getID();
+	string getDefSym();
 };

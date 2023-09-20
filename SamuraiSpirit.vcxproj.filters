@@ -13,15 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\SamuraiChar">
+      <UniqueIdentifier>{48c9f8b0-47b2-4e2a-a495-12565d2c58d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SamuraiChar">
+      <UniqueIdentifier>{f5daaa6e-8dfd-4e0f-9d28-486249be1387}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SamuraiSpirit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BuildDeck.h">
+    <ClCompile Include="RaidStack.h">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="BuildDeck.cpp">
+    <ClCompile Include="RaidStack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Raider.cpp">
@@ -30,12 +36,57 @@
     <ClCompile Include="DeckDetails.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Samurai.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Daisuke.cpp">
+      <Filter>Source Files\SamuraiChar</Filter>
+    </ClCompile>
+    <ClCompile Include="Gorobei.cpp">
+      <Filter>Source Files\SamuraiChar</Filter>
+    </ClCompile>
+    <ClCompile Include="Heihachi.cpp">
+      <Filter>Source Files\SamuraiChar</Filter>
+    </ClCompile>
+    <ClCompile Include="Kanbei.cpp">
+      <Filter>Source Files\SamuraiChar</Filter>
+    </ClCompile>
+    <ClCompile Include="Katsushiro.cpp">
+      <Filter>Source Files\SamuraiChar</Filter>
+    </ClCompile>
+    <ClCompile Include="Kikuchiyo.cpp">
+      <Filter>Source Files\SamuraiChar</Filter>
+    </ClCompile>
+    <ClCompile Include="Kyuzo.cpp">
+      <Filter>Source Files\SamuraiChar</Filter>
+    </ClCompile>
+    <ClCompile Include="HumanPlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Raider.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DeckDetails.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Samurai.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GenericPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Daisuke.h">
+      <Filter>Header Files\SamuraiChar</Filter>
+    </ClInclude>
+    <ClInclude Include="Gorobei.h">
+      <Filter>Header Files\SamuraiChar</Filter>
+    </ClInclude>
+    <ClInclude Include="HumanPlayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

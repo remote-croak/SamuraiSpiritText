@@ -40,3 +40,9 @@ string Raider::getID()
 {
 	return (m_id + "\nFlame: " + getFlameVal() + "\nDef: " + m_defSymbol + "\nPenalty: " + m_penalty + "\nBoss Penalty: " + m_bossPenalty);
 }
+
+string Raider::getDefSym()
+{
+	return m_defSymbol;
+}
+

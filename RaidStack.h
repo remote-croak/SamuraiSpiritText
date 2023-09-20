@@ -8,7 +8,7 @@
 
 using namespace std;
 
-class BuildDeck
+class RaidStack
 {
 private:
 
@@ -50,8 +50,6 @@ private:
 	void addRaider(Raider raid, int card);
 	void reduceSymbolCount();
 
-	//void createPlayingDeck(int numPlayers, int round);
-
 	string bossPenalties(int card);
 	string commonPenalty(int level);
 	string generateID(string type, string level, string cardNum);
@@ -67,14 +65,15 @@ private:
 	
 	
 public:
-	
-	BuildDeck();
-	void createPlayingDeck(int numPlayers, int round);
+	RaidStack();
+	void buildStack(int numPlayers, int round);
 	//void makeCards();
 
 	void loadCommon();
 	void loadLieut();
 	void loadBoss();
 	void printPlayingDeck();
+	Raider drawRaider();
+	Raider flipTopRaider();
 
 };

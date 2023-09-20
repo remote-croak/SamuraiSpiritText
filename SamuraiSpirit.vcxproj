@@ -127,15 +127,30 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Daisuke.cpp" />
     <ClCompile Include="DeckDetails.cpp" />
+    <ClCompile Include="GenericPlayer.cpp" />
+    <ClCompile Include="Gorobei.cpp" />
+    <ClCompile Include="Heihachi.cpp" />
+    <ClCompile Include="Kanbei.cpp" />
+    <ClCompile Include="Katsushiro.cpp" />
+    <ClCompile Include="Kikuchiyo.cpp" />
+    <ClCompile Include="Kyuzo.cpp" />
+    <ClCompile Include="HumanPlayer.cpp" />
     <ClCompile Include="Raider.cpp" />
+    <ClCompile Include="Samurai.cpp" />
     <ClCompile Include="SamuraiSpirit.cpp" />
-    <ClCompile Include="BuildDeck.h" />
-    <ClCompile Include="BuildDeck.cpp" />
+    <ClCompile Include="RaidStack.h" />
+    <ClCompile Include="RaidStack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Daisuke.h" />
     <ClInclude Include="DeckDetails.h" />
+    <ClInclude Include="GenericPlayer.h" />
+    <ClInclude Include="Gorobei.h" />
+    <ClInclude Include="HumanPlayer.h" />
     <ClInclude Include="Raider.h" />
+    <ClInclude Include="Samurai.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

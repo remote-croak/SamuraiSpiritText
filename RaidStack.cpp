@@ -8,11 +8,11 @@
 #include <chrono>
 #include "Raider.h"
 #include "DeckDetails.h"
-#include "BuildDeck.h"
+#include "RaidStack.h"
 
 using namespace std;
 
-BuildDeck::BuildDeck()
+RaidStack::RaidStack()
 {
 
 	for (int level = 1; level < 7; level++)
@@ -22,7 +22,7 @@ BuildDeck::BuildDeck()
 	//this->createRaider(7);
 }
 
-void BuildDeck::initRaider(int level)
+void RaidStack::initRaider(int level)
 {
 	details.setLevelDetails(level);
 	isFlame = true;
@@ -34,7 +34,7 @@ void BuildDeck::initRaider(int level)
 	deckSize = details.getNumCards();
 }
 
-void BuildDeck::createRaider(int level)
+void RaidStack::createRaider(int level)
 {
 	this->initRaider(level);
 
@@ -56,7 +56,7 @@ void BuildDeck::createRaider(int level)
 
 }
 
-void BuildDeck::addRaider(Raider raid, int card)
+void RaidStack::addRaider(Raider raid, int card)
 {
 	
 	if (raid.getLevel() <= 4)
@@ -77,7 +77,7 @@ void BuildDeck::addRaider(Raider raid, int card)
 	}
 }
 
-void BuildDeck::reduceSymbolCount()
+void RaidStack::reduceSymbolCount()
 {
 	if (this->hasSymbol == "Hat" && details.getHats() > 0)
 	{
@@ -97,7 +97,7 @@ void BuildDeck::reduceSymbolCount()
 
 // checks if there are still symbols that can be applied of a type.
 // If the symbol is empty then it switches to the next type and resets the flame.
-void BuildDeck::checkSymbols()
+void RaidStack::checkSymbols()
 {
 	if (details.getHats() == 0)
 	{
@@ -119,7 +119,7 @@ void BuildDeck::checkSymbols()
 
 }
 
-void BuildDeck::checkFlames(int level)
+void RaidStack::checkFlames(int level)
 {
 	if (this->isFlame == true && level != 6)
 	{
@@ -134,7 +134,7 @@ void BuildDeck::checkFlames(int level)
 	}
 }
 	
-void BuildDeck::checkHatFlames(int level)
+void RaidStack::checkHatFlames(int level)
 {
 	if (this->hasSymbol == "Hat")
 	{
@@ -160,7 +160,7 @@ void BuildDeck::checkHatFlames(int level)
 	}
 }
 
-void BuildDeck::checkDollFlames(int level)
+void RaidStack::checkDollFlames(int level)
 {
 	if (this->hasSymbol == "Doll")
 	{
@@ -186,7 +186,7 @@ void BuildDeck::checkDollFlames(int level)
 	}
 }
 
-void BuildDeck::checkFarmFlames(int level)
+void RaidStack::checkFarmFlames(int level)
 {
 	if (this->hasSymbol == "Farm")
 	{
@@ -207,7 +207,7 @@ void BuildDeck::checkFarmFlames(int level)
 	}
 }
 
-void BuildDeck::setRaiderPenalties(int card, int level)
+void RaidStack::setRaiderPenalties(int card, int level)
 {
 	if (level == 6)
 	{
@@ -237,7 +237,7 @@ void BuildDeck::setRaiderPenalties(int card, int level)
 	}
 }
 
-string BuildDeck::bossPenalties(int card) 
+string RaidStack::bossPenalties(int card) 
 {
 
 	string pen = "";
@@ -323,7 +323,7 @@ string BuildDeck::bossPenalties(int card)
 	return pen;
 }
 
-string BuildDeck::commonPenalty(int level)
+string RaidStack::commonPenalty(int level)
 {
 	string pen = "";
 		
@@ -382,7 +382,7 @@ string BuildDeck::commonPenalty(int level)
 	return pen;
 }
 
-string BuildDeck::flameBlankPenalty(int level)
+string RaidStack::flameBlankPenalty(int level)
 {
 	string pen = "";
 
@@ -434,7 +434,7 @@ string BuildDeck::flameBlankPenalty(int level)
 	return pen;
 }
 
-string BuildDeck::plainBlankPenalty(int level)
+string RaidStack::plainBlankPenalty(int level)
 {
 	string pen = "";
 
@@ -457,7 +457,7 @@ string BuildDeck::plainBlankPenalty(int level)
 }
 
 
-string BuildDeck::flameHatPenalty(int level)
+string RaidStack::flameHatPenalty(int level)
 {
 	string pen = "";
 
@@ -494,7 +494,7 @@ string BuildDeck::flameHatPenalty(int level)
 	return pen;
 }
 
-string BuildDeck::plainHatPenalty(int level)
+string RaidStack::plainHatPenalty(int level)
 {
 	string pen = "";
 
@@ -542,7 +542,7 @@ string BuildDeck::plainHatPenalty(int level)
 	return pen;
 }
 
-string BuildDeck::flameDollPenalty(int level)
+string RaidStack::flameDollPenalty(int level)
 {
 	string pen = "";
 
@@ -569,7 +569,7 @@ string BuildDeck::flameDollPenalty(int level)
 	return pen;
 }
 
-string BuildDeck::plainDollPenalty(int level)
+string RaidStack::plainDollPenalty(int level)
 {
 	string pen = "";
 
@@ -615,7 +615,7 @@ string BuildDeck::plainDollPenalty(int level)
 	return pen;
 }
 
-string BuildDeck::flameFarmPenalty(int level)
+string RaidStack::flameFarmPenalty(int level)
 {
 	string pen = "";
 		
@@ -642,7 +642,7 @@ string BuildDeck::flameFarmPenalty(int level)
 	return pen;
 }
 
-string BuildDeck::plainFarmPenalty(int level)
+string RaidStack::plainFarmPenalty(int level)
 {
 	string pen = "";
 		
@@ -684,13 +684,13 @@ string BuildDeck::plainFarmPenalty(int level)
 	return pen;
 }
 
-string BuildDeck::generateID(string type, string level, string cardNum)
+string RaidStack::generateID(string type, string level, string cardNum)
 {
 	string id = type + level + "-" + cardNum;
 	return id;
 }
 		
-void BuildDeck::loadCommon()
+void RaidStack::loadCommon()
 {
 	for (int i = 0; i < 52; i++) {
 		
@@ -698,7 +698,7 @@ void BuildDeck::loadCommon()
 	}
 }
 
-void BuildDeck::loadLieut()
+void RaidStack::loadLieut()
 {
 	for (int i = 0; i < 7; i++)
 	{
@@ -706,7 +706,7 @@ void BuildDeck::loadLieut()
 	}
 }
 
-void BuildDeck::loadBoss()
+void RaidStack::loadBoss()
 {
 
 	for (int i = 0; i < 7; i++)
@@ -715,7 +715,7 @@ void BuildDeck::loadBoss()
 	}
 }
 
-void BuildDeck::printPlayingDeck()
+void RaidStack::printPlayingDeck()
 {
 	for (int i = 0; i < playingDeck.size(); i++)
 	{
@@ -724,7 +724,7 @@ void BuildDeck::printPlayingDeck()
 	cout << playingDeck.size() << endl;
 }
 
-void BuildDeck::createPlayingDeck(int numPlayers, int round)
+void RaidStack::buildStack(int numPlayers, int round)
 {
 	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 	if (round == 1)
@@ -760,5 +760,20 @@ void BuildDeck::createPlayingDeck(int numPlayers, int round)
 
 		shuffle(playingDeck.begin(), playingDeck.end(), default_random_engine(seed));
 	}
+	
+}
+
+Raider RaidStack::drawRaider() 
+{
+	Raider topCard = playingDeck[0];
+	cout << "\n";
+	playingDeck.erase(playingDeck.begin());
+	return topCard;
+	
+}
+
+Raider RaidStack::flipTopRaider()
+{
+	return playingDeck[0];	
 }
 
